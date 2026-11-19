@@ -1,0 +1,396 @@
+* {box-sizing: border-box;}
+
+body {
+    background-color: black;
+    background-image: linear-gradient( black, rgba(168, 9, 231, 0.521) );
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+main {
+    padding-top: 1em;
+}
+
+p {
+    font-size: large;
+    color: white;
+}
+
+a {
+    color: rgba(168, 9, 231, 0.849);
+}
+
+b {
+    color: white;
+}
+
+ul {
+    color: white;
+    list-style-image: url(images/small-gear.png);
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+li {
+    margin-bottom: 6px;
+    font-size: large;
+}
+
+h2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgba(168, 9, 231, 0.934);
+}
+
+nav a:visited {
+    text-decoration: dashed;
+    color: rgba(168, 9, 231, 0.934);
+}
+
+nav a:hover {
+    text-decoration: solid;
+    color: white;
+}
+
+.menu-container {
+    padding-top: 1em;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.vertical-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: black;
+    border: 1px solid purple;
+    z-index: 1000;
+}
+
+.vertical-menu a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: purple;
+    color: white;
+}
+
+.menu-container:hover .vertical-menu {
+    display: block;
+}
+
+
+header {
+    color: blueviolet;
+    text-shadow: 0 0 10px rgba(168, 9, 231, 0.849);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: rgba(168, 9, 231, 0.849);
+}
+
+.footer {
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+footer a {
+        color: white;
+    }
+
+#me {
+    box-shadow: 1px 1px 5px rgba(168, 9, 231, 0.849);
+    border-radius: 15px;
+}
+
+#squirell {
+    box-shadow: 1px 1px 5px rgba(168, 9, 231, 0.849);
+    border-radius: 15px;
+}
+
+.index-main {
+    text-align: center;
+}
+
+.journey {
+    text-align: center;
+}
+
+.journey-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.journey-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.journey .spinner {
+    flex-shrink: 0;
+    margin-top: 30px;
+    width: 35px;
+    height: 35px;
+}
+
+.spinner {
+    border: 4px solid white;
+    border-top: 4px solid purple;
+    border-radius: 50%;
+    transition: transform 1s ease;
+}
+
+.spinner:hover {
+    transform: rotate(360deg);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hobbies-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.projects {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.resume {
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0;
+    justify-items: center;
+    text-align: center;
+}
+
+.skills-grid li {
+    padding: 12px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.skills-grid table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.skills-grid th, .skills-grid td {
+    border: 1px solid purple;
+    padding: 12px;
+    text-align: center;
+}
+
+.skills-grid th {
+    background-color: purple;
+    color: white;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid purple;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(168, 9, 231, 0.6);
+}
+
+.video-container iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid purple;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.contact-form label {
+    color: white;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #222;
+    color: white;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: blueviolet;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 1200px;
+    }
+
+    header h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+        overflow: visible;
+    }
+
+    nav a {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    main {
+        padding: 20px 40px;
+    }
+
+    p {
+        font-size: large;
+        line-height: 1.6;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    .resume {
+    text-align: left;
+    }
+
+    .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0;
+    justify-items: center;
+    text-align: center;
+}
+
+.skills-grid table {
+    width: 90%;
+}
+
+.skills-grid th, .skills-grid td {
+    padding: 15px;
+}
+
+    .about-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .hobbies-list {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: large;
+    }
+
+    ul {
+    color: white;
+    list-style-image: url(images/small-gear.png);
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.journey-layout {
+    gap: 40px;
+}
+
+.journey .spinner {
+    width: 45px;
+    height: 45px;
+}
+
+}

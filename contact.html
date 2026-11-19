@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nicholas's Portfolio</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/web-favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header><h1><strong>Contact Form</strong></h1></header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="journey.html">Journey</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="menu-container">
+    <div class="menu-icon">
+        <img src="images/web-favicon.ico" alt="Open navigation menu">
+    </div>
+
+    <nav class="vertical-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="journey.html">Journey</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+
+    
+<main class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>Have a question or want to get in touch?</p>
+
+    <form class="contact-form" id="contactForm" action="https://webdevbasics.net/scripts/pacific.php" method="post" onsubmit="alert('Thank you for reaching out! Will read your message when I get the chance')">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"
+               placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"
+               placeholder="Enter your email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"
+                  rows="10"
+                  placeholder="Write your message here..."
+                  required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+    <p id="popupMessage"></p>
+
+</main>
+
+
+    <br>
+    <footer class="footer">&copy; <em>2026 <a href="mailto:hawkins.nick84@gmail.com">Nicholas Hawkins</em></a></footer>
+
+</body>
+
+</html>
