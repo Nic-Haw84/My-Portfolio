@@ -1,24 +1,41 @@
 * {box-sizing: border-box;}
 
+html {
+    min-height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
     background-color: black;
-    background-image: linear-gradient( black, rgba(168, 9, 231, 0.521) );
+    background-image: linear-gradient(black, rgba(168, 9, 231, 0.521));
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-    padding-top: 1em;
+    padding: 15px 15px;
+    width: 100%;
+    min-width: 0;
+    flex: 1;
 }
 
 p {
-    font-size: large;
+    font-size: 16px;
     color: white;
+    line-height: 1.6;
+    overflow-wrap: break-word;
 }
 
 a {
     color: rgba(168, 9, 231, 0.849);
+    overflow-wrap: break-word;
 }
 
 b {
@@ -30,10 +47,11 @@ ul {
     list-style-image: url(images/small-gear.png);
     list-style-type: square;
     list-style-position: inside;
+    padding-left: 10px;
 }
 
 li {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-size: large;
 }
 
@@ -48,16 +66,18 @@ h3 {
 
 nav {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 15px;
+    gap: 12px;
+    padding: 12px;
 }
 
 nav a {
     text-decoration: none;
     color: rgba(168, 9, 231, 0.934);
+    padding: 5px;
 }
 
 nav a:visited {
@@ -71,9 +91,7 @@ nav a:hover {
 }
 
 .menu-container {
-    padding-top: 1em;
-    position: relative;
-    display: inline-block;
+    display: none;
 }
 
 .menu-icon {
@@ -114,6 +132,11 @@ nav a:hover {
 header {
     color: blueviolet;
     text-shadow: 0 0 10px rgba(168, 9, 231, 0.849);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
 }
 
 hr {
@@ -123,6 +146,9 @@ hr {
 }
 
 .footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
     color: white;
     text-align: center;
     background-color: black;
@@ -133,13 +159,33 @@ footer a {
     }
 
 #me {
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
     box-shadow: 1px 1px 5px rgba(168, 9, 231, 0.849);
     border-radius: 15px;
+    overflow: hidden;
+}
+
+#me img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 #squirell {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
     box-shadow: 1px 1px 5px rgba(168, 9, 231, 0.849);
     border-radius: 15px;
+    overflow: hidden;
+}
+
+#squirell img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .index-main {
@@ -148,6 +194,11 @@ footer a {
 
 .journey {
     text-align: center;
+    width: 100%;
+}
+
+.journey h3 {
+    margin-top: 25px;
 }
 
 .journey-layout {
@@ -184,18 +235,31 @@ footer a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+}
+
+.about-content p {
+    width: 100%;
+    text-align: center;
+}
+
+#about-me2 {
+    text-align: center;
 }
 
 .hobbies-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
 }
 
 .projects {
     text-align: center;
     margin-top: 1em;
+}
+
+.projects p {
+    text-align: center;
 }
 
 .resume {
@@ -206,18 +270,34 @@ footer a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
+    width: 100%;
     padding: 0;
     justify-items: center;
     text-align: center;
 }
 
 .skills-grid li {
-    padding: 12px;
+    padding: 10px;
 }
 
 .table-container {
     width: 100%;
     overflow-x: auto;
+}
+
+#skillsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#skillsTable th,
+#skillsTable td {
+    border: 1px solid purple;
+    padding: 10px;
+    text-align: center;
 }
 
 .skills-grid table {
@@ -256,6 +336,14 @@ footer a {
     border: none;
 }
 
+.resume {
+    text-align: center;
+}
+
+.resume ul {
+    text-align: left;
+}
+
 .contact {
     text-align: center;
 }
@@ -267,11 +355,10 @@ footer a {
     width: 100%;
     max-width: 500px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid purple;
     border-radius: 12px;
-    box-sizing: border-box;
 }
 
 .contact-form label {
@@ -312,85 +399,251 @@ footer a {
 @media screen and (min-width: 1024px) {
 
     body {
-        margin: 20px auto;
-        padding: 20px;
-        max-width: 1200px;
+        max-width: 1400px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 25px 40px;
+    }
+
+    header {
+        padding: 20px 0;
+        margin-bottom: 15px;
     }
 
     header h1 {
-        font-size: 40px;
-        text-align: center;
+        font-size: 42px;
+        letter-spacing: 2px;
     }
 
-    nav {
-        text-align: center;
-        overflow: visible;
+    main {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    nav:not(.vertical-menu) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding: 18px;
+        margin: 10px auto 25px;
     }
 
     nav a {
         font-size: 18px;
-        margin: 0 10px;
+        padding: 10px 15px;
+        transition: color 0.3s ease,
+                    background-color 0.3s ease;
     }
 
-    main {
-        padding: 20px 40px;
+    nav a:hover {
+        color: white;
+        background-color: rgba(128, 0, 128, 0.35);
+        border-radius: 8px;
     }
 
-    p {
-        font-size: large;
-        line-height: 1.6;
+    .menu-container {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+}
+
+    .menu-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+    .menu-icon img {
+        width: 40px;
+        height: 40px;
     }
 
-    footer a {
+    .vertical-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 190px;
+        padding: 10px;
+        background-color: black;
+        border: 2px solid purple;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(168, 9, 231, 0.5);
+        z-index: 1000;
+    }
+
+    .vertical-menu a {
+        display: block;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .vertical-menu a:hover {
+        background-color: purple;
         color: white;
     }
 
-    .resume {
-    text-align: left;
+    .menu-container:hover .vertical-menu,
+    .menu-container:focus-within .vertical-menu {
+        display: flex;
     }
 
-    .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 0;
-    justify-items: center;
-    text-align: center;
-}
+    .index-main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px;
+    }
 
-.skills-grid table {
-    width: 90%;
-}
-
-.skills-grid th, .skills-grid td {
-    padding: 15px;
-}
+    #me {
+        max-width: 350px;
+        margin: 25px auto;
+    }
 
     .about-content {
+        display: flex;
         flex-direction: row;
+        justify-content: center;
         align-items: center;
-        gap: 35px;
+        gap: 50px;
+        max-width: 1050px;
+        margin: 30px auto;
+    }
+
+    #squirell {
+        width: 40%;
+        max-width: 350px;
+        flex-shrink: 0;
+    }
+
+    .about-content p {
+        flex: 1;
+        text-align: left;
     }
 
     .hobbies-list {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        font-size: large;
+        gap: 15px 30px;
+        max-width: 800px;
+        margin: 25px auto;
     }
 
-    ul {
-    color: white;
-    list-style-image: url(images/small-gear.png);
-    list-style-type: square;
-    list-style-position: inside;
-}
+    .skills-grid {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 25px;
+        justify-items: center;
+    }
 
-.journey-layout {
-    gap: 40px;
-}
+    #skillsTable {
+        max-width: 900px;
+        margin: 30px auto;
+    }
 
-.journey .spinner {
-    width: 45px;
-    height: 45px;
-}
+    #skillsTable th,
+    #skillsTable td {
+        padding: 16px 22px;
+        font-size: 17px;
+    }
+
+    .projects {
+        max-width: 1050px;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .projects p {
+        text-align: left;
+        max-width: 900px;
+        margin: 15px auto;
+    }
+
+    .journey {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    .journey h3 {
+        margin-top: 35px;
+    }
+
+    .journey p {
+        max-width: 900px;
+        margin: 15px auto;
+    }
+
+    .resume {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 25px;
+        text-align: left;
+    }
+
+    .resume h2 {
+        margin-top: 30px;
+        border-bottom: 2px solid purple;
+        padding-bottom: 10px;
+    }
+
+    .resume ul {
+        padding-left: 30px;
+    }
+
+    .video-container {
+        max-width: 600px;
+        margin: 30px auto;
+    }
+
+    .contact-form {
+        max-width: 600px;
+        padding: 30px;
+        gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .contact-form button {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .footer {
+        margin-top: auto;
+        padding: 20px;
+        font-size: 16px;
+    }
 
 }
